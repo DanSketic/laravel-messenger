@@ -14,10 +14,12 @@ class CreateThreadsTable extends Migration
      */
     public function up()
     {
-        Schema::create(Models::table('threads'), function (Blueprint $table) {
+        Schema::create(Models::table('messenger_threads'), function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('offer_id')->unsigned()->nullable();
             $table->string('subject');
             $table->timestamps();
+            $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade');
         });
     }
 
