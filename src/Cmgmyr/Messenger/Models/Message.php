@@ -2,7 +2,9 @@
 
 namespace Cmgmyr\Messenger\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Support\Facades\DB;
 
 class Message extends Eloquent
 {
@@ -57,6 +59,16 @@ class Message extends Eloquent
     }
 
     /**
+     * Thread messenger relationship.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function thread_messenger()
+    {
+        return $this->belongsTo(Models::classname(Thread::class), 'thread_id', 'id')->where('offer_id', null);
+    }
+
+    /**
      * User relationship.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -84,5 +96,25 @@ class Message extends Eloquent
     public function recipients()
     {
         return $this->participants()->where('user_id', '!=', $this->user_id);
+    }
+
+    /**
+     * Returns unread messages given the userId.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param $userId
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeUnreadForUser(Builder $query, $userId)
+    {
+        return $query->has('thread_messenger')
+            ->where('user_id', '!=', $userId)
+            ->whereHas('participants', function (Builder $query) use ($userId) {
+                $query->where('user_id', $userId)
+                    ->where(function (Builder $q) {
+                        $q->where('last_read', '<', DB::raw($this->getTable() . '.created_at'))
+                            ->orWhereNull('last_read');
+                    });
+            });
     }
 }

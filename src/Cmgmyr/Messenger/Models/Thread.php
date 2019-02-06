@@ -32,6 +32,7 @@ class Thread extends Eloquent
      */
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
+
     /**
      * {@inheritDoc}
      */
@@ -59,7 +60,7 @@ class Thread extends Eloquent
      */
     public function getLatestMessageAttribute()
     {
-        return $this->messages()->latest()->first();
+        return $this->messages->sortByDesc('created_at')->first();
     }
 
     /**
@@ -70,6 +71,18 @@ class Thread extends Eloquent
     public function participants()
     {
         return $this->hasMany(Models::classname(Participant::class), 'thread_id', 'id');
+    }
+
+    /**
+     * User's relationship.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     *
+     * @codeCoverageIgnore
+     */
+    public function users()
+    {
+        return $this->belongsToMany(Models::classname('User'), Models::table('participants'), 'thread_id', 'user_id');
     }
 
     /**
@@ -260,7 +273,7 @@ class Thread extends Eloquent
      */
     public function getParticipantFromUser($userId)
     {
-        return $this->participants()->where('user_id', $userId)->firstOrFail();
+        return $this->participants->where('user_id', $userId)->first();
     }
 
     /**
@@ -358,7 +371,7 @@ class Thread extends Eloquent
      */
     public function userUnreadMessages($userId)
     {
-        $messages = $this->messages()->get();
+        $messages = $this->messages;
 
         try {
             $participant = $this->getParticipantFromUser($userId);
@@ -386,4 +399,12 @@ class Thread extends Eloquent
     {
         return $this->userUnreadMessages($userId)->count();
     }
+
+    public function otherParticipant(\App\Models\User $user = null)
+    {
+        $user_id = $user ? $user->id : \Auth::id();
+
+        return $this->participants->where('user_id', '<>', $user_id)->first()->user;
+    }
+
 }
