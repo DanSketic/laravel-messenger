@@ -1,11 +1,11 @@
 <?php
 
-namespace Cmgmyr\Messenger;
+namespace DanSketic\Messenger;
 
-use Cmgmyr\Messenger\Models\Message;
-use Cmgmyr\Messenger\Models\Models;
-use Cmgmyr\Messenger\Models\Participant;
-use Cmgmyr\Messenger\Models\Thread;
+use DanSketic\Messenger\Models\Message;
+use DanSketic\Messenger\Models\Models;
+use DanSketic\Messenger\Models\Participant;
+use DanSketic\Messenger\Models\Thread;
 use Illuminate\Support\ServiceProvider;
 
 class MessengerServiceProvider extends ServiceProvider

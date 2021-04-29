@@ -1,8 +1,8 @@
 <?php
 
-namespace Cmgmyr\Messenger\Test\Models;
+namespace DanSketic\Messenger\Test\Models;
 
-use Cmgmyr\Messenger\Models\Message;
+use DanSketic\Messenger\Models\Message;
 
 class CustomMessage extends Message
 {

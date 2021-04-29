@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmgmyr\Messenger\Test\Models;
+namespace DanSketic\Messenger\Test\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

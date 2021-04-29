@@ -1,11 +1,11 @@
 <?php
 
-namespace Cmgmyr\Messenger\Traits;
+namespace DanSketic\Messenger\Traits;
 
-use Cmgmyr\Messenger\Models\Message;
-use Cmgmyr\Messenger\Models\Models;
-use Cmgmyr\Messenger\Models\Participant;
-use Cmgmyr\Messenger\Models\Thread;
+use DanSketic\Messenger\Models\Message;
+use DanSketic\Messenger\Models\Models;
+use DanSketic\Messenger\Models\Participant;
+use DanSketic\Messenger\Models\Thread;
 
 trait Messagable
 {

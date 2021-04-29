@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmgmyr\Messenger\Models;
+namespace DanSketic\Messenger\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model as Eloquent;
@@ -56,7 +56,7 @@ class Thread extends Eloquent
     /**
      * Returns the latest message from a thread.
      *
-     * @return \Cmgmyr\Messenger\Models\Message
+     * @return \DanSketic\Messenger\Models\Message
      */
     public function getLatestMessageAttribute()
     {

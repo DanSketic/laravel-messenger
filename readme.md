@@ -43,12 +43,12 @@ Run:
 Add the service provider to `config/app.php` under `providers`:
 
     'providers' => [
-        Cmgmyr\Messenger\MessengerServiceProvider::class,
+        DanSketic\Messenger\MessengerServiceProvider::class,
     ]
 
 Publish config:
 
-    php artisan vendor:publish --provider="Cmgmyr\Messenger\MessengerServiceProvider" --tag="config"
+    php artisan vendor:publish --provider="DanSketic\Messenger\MessengerServiceProvider" --tag="config"
 	
 Update config file to reference your User Model:
 
@@ -64,7 +64,7 @@ Create a `users` table if you do not have one already. If you need one, simply u
     
 Publish migrations:
 
-    php artisan vendor:publish --provider="Cmgmyr\Messenger\MessengerServiceProvider" --tag="migrations"
+    php artisan vendor:publish --provider="DanSketic\Messenger\MessengerServiceProvider" --tag="migrations"
 
 Migrate your database:
 
@@ -72,7 +72,7 @@ Migrate your database:
 
 Add the trait to your user model:
 
-    use Cmgmyr\Messenger\Traits\Messagable;
+    use DanSketic\Messenger\Traits\Messagable;
     
     class User extends Model {
         use Messagable;

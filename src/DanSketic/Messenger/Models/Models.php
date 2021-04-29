@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmgmyr\Messenger\Models;
+namespace DanSketic\Messenger\Models;
 
 class Models
 {
@@ -113,7 +113,7 @@ class Models
      * Get an instance of the messages model.
      *
      * @param  array $attributes
-     * @return \Cmgmyr\Messenger\Models\Message
+     * @return \DanSketic\Messenger\Models\Message
      */
     public static function message(array $attributes = [])
     {
@@ -124,7 +124,7 @@ class Models
      * Get an instance of the participants model.
      *
      * @param  array $attributes
-     * @return \Cmgmyr\Messenger\Models\Participant
+     * @return \DanSketic\Messenger\Models\Participant
      */
     public static function participant(array $attributes = [])
     {
@@ -135,7 +135,7 @@ class Models
      * Get an instance of the threads model.
      *
      * @param  array $attributes
-     * @return \Cmgmyr\Messenger\Models\Thread
+     * @return \DanSketic\Messenger\Models\Thread
      */
     public static function thread(array $attributes = [])
     {

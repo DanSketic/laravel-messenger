@@ -1,11 +1,11 @@
 <?php
 
-namespace Cmgmyr\Messenger\Test;
+namespace DanSketic\Messenger\Test;
 
 use Carbon\Carbon;
-use Cmgmyr\Messenger\Models\Models;
-use Cmgmyr\Messenger\Models\Participant;
-use Cmgmyr\Messenger\Models\Thread;
+use DanSketic\Messenger\Models\Models;
+use DanSketic\Messenger\Models\Participant;
+use DanSketic\Messenger\Models\Thread;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use ReflectionClass;
 

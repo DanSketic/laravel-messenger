@@ -1,14 +1,14 @@
 <?php
 
-namespace Cmgmyr\Messenger\Test;
+namespace DanSketic\Messenger\Test;
 
-use Cmgmyr\Messenger\Models\Message;
-use Cmgmyr\Messenger\Models\Models;
-use Cmgmyr\Messenger\Models\Participant;
-use Cmgmyr\Messenger\Models\Thread;
-use Cmgmyr\Messenger\Test\Models\CustomMessage;
-use Cmgmyr\Messenger\Test\Models\CustomParticipant;
-use Cmgmyr\Messenger\Test\Models\CustomThread;
+use DanSketic\Messenger\Models\Message;
+use DanSketic\Messenger\Models\Models;
+use DanSketic\Messenger\Models\Participant;
+use DanSketic\Messenger\Models\Thread;
+use DanSketic\Messenger\Test\Models\CustomMessage;
+use DanSketic\Messenger\Test\Models\CustomParticipant;
+use DanSketic\Messenger\Test\Models\CustomThread;
 
 class CustomModelsTest extends TestCase
 {
