@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-0": {
-            "Cmgmyr\\Messenger\\": "src/"
+            "DanSketic\\Messenger\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Cmgmyr\\Messenger\\Test\\": "tests/"
+            "DanSketic\\Messenger\\Test\\": "tests/"
         }
     },
     "minimum-stability": "stable"
