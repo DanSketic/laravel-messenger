@@ -1,7 +1,7 @@
 filter:
     excluded_paths:
         - 'tests/*'
-        - 'src/Cmgmyr/Messenger/examples/'
+        - 'src/DanSketic/Messenger/examples/'
         - 'src/config/'
         - 'src/migrations/'
 

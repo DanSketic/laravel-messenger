@@ -23,12 +23,12 @@
     </php>
     <filter>
         <whitelist>
-            <directory suffix=".php">src/Cmgmyr</directory>
+            <directory suffix=".php">src/DanSketic</directory>
             <exclude>
                 <directory>src/migrations/</directory>
                 <directory>src/config/</directory>
-                <directory>src/Cmgmyr/Messenger/examples/</directory>
-                <file>src/Cmgmyr/Messenger/MessengerServiceProvider.php</file>
+                <directory>src/DanSketic/Messenger/examples/</directory>
+                <file>src/DanSketic/Messenger/MessengerServiceProvider.php</file>
             </exclude>
         </whitelist>
     </filter>
